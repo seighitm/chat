@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/**/*.tsx"
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.1.0",
