@@ -4,7 +4,8 @@ import {useQueryClient} from "@tanstack/react-query";
 import {Message} from "@/types/models/messages.ts";
 import {WS_EVENTS, WSEventType} from "@/types/shared/ws.ts";
 import {QueryKeys} from "@/types/shared/reactQuery.ts";
-import {Button, ScrollArea, TextField} from "@/components/UI";
+import {ScrollArea} from "@/components/UI";
+import ChatInput from "../components/shared/ChatInput.tsx";
 
 const Chat = () => {
     const {ws} = useWsStore();
@@ -73,12 +74,7 @@ const Chat = () => {
                     Messages
                 </div>
             </ScrollArea>
-            <TextField
-                placeholder="Type your message..."
-            />
-            <Button>
-                Send
-            </Button>
+            <ChatInput/>
         </div>
     );
 };
