@@ -1,4 +1,5 @@
-import { Message } from "./messagesTypes";
+import { Message } from "./types/messagesTypes";
+import {notifyClients} from "./notifyClients";
 
 export class MessageManager {
   private messages: Message[] = [];
@@ -17,10 +18,15 @@ export class MessageManager {
 
     if (this.messages.length >= 9) {
       this.messages.shift();
+      notifyClients("message_deleted");
     }
 
     this.messages.push(newMessage);
+    notifyClients("message_added", { message: newMessage });
     return newMessage;
+  }
+
+  public validateMessage(content: string) {
   }
 
   public getAllMessages() {
