@@ -1,7 +1,7 @@
-import Chat from "@/pages/Chat.tsx";
+import Chat from "@/pages/Chat";
 
 const App = () => {
-    return <Chat/>
+  return <Chat/>
 };
 
 export default App;

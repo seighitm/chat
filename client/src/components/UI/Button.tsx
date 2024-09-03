@@ -1,5 +1,5 @@
 import {forwardRef} from "react";
-import {PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef,} from "@/types/shared/reactPolymorphicTypes.ts";
+import {PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef,} from "@/types/shared/reactPolymorphicTypes";
 import {cn} from "@/utils";
 import {cva, type VariantProps} from "class-variance-authority";
 import {LoaderIcon} from "@/assets/icons/Icons";
