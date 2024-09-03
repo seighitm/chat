@@ -4,7 +4,7 @@ import { LoaderIcon } from "@/assets/icons/Icons";
 import { UserImg } from "@/assets/images/images";
 import { formatTimestamp } from "@/utils";
 import { ScrollArea } from "@/components/UI";
-import {QueryKeys} from "@/types/shared/reactQuery.ts";
+import { QueryKeys } from "@/types/shared/reactQuery.ts";
 
 const Messages = () => {
   const { data: dataMessages, isLoading: isLoadingMessages } = useQuery({
@@ -21,8 +21,8 @@ const Messages = () => {
   }
 
   return (
-    <ScrollArea className="h-[calc(100vh-78px-2.5rem)] w-full">
-      <ul className="flex flex-col gap-2">
+    <ScrollArea className="h-[calc(100vh-80px-2.5rem)] w-full">
+      <ul className="flex flex-col gap-2 px-4">
         {dataMessages.data?.map((message) => (
           <li key={message.id} className="flex items-start gap-2">
             <img
@@ -31,7 +31,7 @@ const Messages = () => {
               alt="user image"
             />
             <div>
-              <div className="h-min rounded-full border-2 border-border bg-gray-200 p-px px-2">
+              <div className="h-min rounded-xl border-2 border-border bg-gray-200 p-px px-2">
                 {message.content}
               </div>
               <time className="text-sm text-muted-foreground">

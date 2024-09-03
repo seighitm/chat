@@ -1,3 +1,3 @@
 export const QueryKeys = {
-    ALL_MESSAGES: 'all-messages'
+    ALL_MESSAGES: 'all_messages'
 }

@@ -3,11 +3,11 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "@/assets/styles/index.css";
 
 const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            refetchOnWindowFocus: false
-        },
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
     },
+  },
 });
 
 type ProvidersProps = {
