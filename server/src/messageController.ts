@@ -4,6 +4,7 @@ import {messageManager} from "./messageManager";
 export function postMessage(req: Request, res: Response, next: NextFunction) {
     try {
         const {content} = req.body;
+        messageManager.validateMessage(content);
         const newMessage = messageManager.createMessage(content);
         res.status(201).json({
             data: newMessage,

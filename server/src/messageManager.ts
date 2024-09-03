@@ -1,5 +1,8 @@
 import { Message } from "./types/messagesTypes";
 import {notifyClients} from "./notifyClients";
+import {MAX_MESSAGES} from "./constants";
+import {messageSchema} from "./messagesSchema";
+
 
 export class MessageManager {
   private messages: Message[] = [];
@@ -16,7 +19,7 @@ export class MessageManager {
       createdAt: new Date().toISOString(),
     };
 
-    if (this.messages.length >= 9) {
+    if (this.messages.length >= MAX_MESSAGES) {
       this.messages.shift();
       notifyClients("message_deleted");
     }
@@ -27,6 +30,7 @@ export class MessageManager {
   }
 
   public validateMessage(content: string) {
+    return messageSchema.parse({ content });
   }
 
   public getAllMessages() {
