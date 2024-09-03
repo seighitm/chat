@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import errorHandlingMiddleware from "./errorHandlingMiddleware";
-import messageRoutes from "./messageRoutes";
+import messageRoutes from "./routes/messageRoutes";
+import errorHandlingMiddleware from "./middlewares/errorHandlingMiddleware";
 
 const app = express();
 
@@ -14,6 +14,5 @@ app.use(cors());
 app.use("/api/messages", messageRoutes);
 
 app.use(errorHandlingMiddleware);
-
 
 export default app;

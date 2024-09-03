@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from "express";
-import {messageManager} from "./messageManager";
+import {messageManager} from "../shared/messageManager";
 
 export function postMessage(req: Request, res: Response, next: NextFunction) {
     try {

@@ -1,8 +1,7 @@
-import { Message } from "./types/messagesTypes";
-import {notifyClients} from "./notifyClients";
-import {MAX_MESSAGES} from "./constants";
-import {messageSchema} from "./messagesSchema";
-
+import { notifyClients } from "./notifyClients";
+import { Message } from "../types/messagesTypes";
+import { messageSchema } from "../validation/messagesSchema";
+import { MAX_MESSAGES } from "./constants";
 
 export class MessageManager {
   private messages: Message[] = [];
