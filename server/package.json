@@ -1,12 +1,46 @@
 {
   "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --pretty --transpile-only src/index.ts dev",
+    "format": "prettier --write src/**/*.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "typescript",
+    "chat",
+    "ws"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "tsconfig-paths": "^4.2.0",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "~2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "~1.9.9",
+    "@types/node": "^22.5.2",
+    "@types/ws": "^8.5.12",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  }
 }
