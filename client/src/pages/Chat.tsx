@@ -3,15 +3,12 @@ import {useWsStore} from "@/store/wsStores";
 import {useQueryClient} from "@tanstack/react-query";
 import {Message} from "@/types/models/messages.ts";
 import {WS_EVENTS, WSEventType} from "@/types/shared/ws.ts";
+import {ChatInput, Messages} from "@/components/shared";
 import {QueryKeys} from "@/types/shared/reactQuery.ts";
-import {ScrollArea} from "@/components/UI";
-import ChatInput from "../components/shared/ChatInput.tsx";
 
 const Chat = () => {
     const {ws} = useWsStore();
     const queryClient = useQueryClient();
-
-    console.log(ws)
 
     const handleWebSocketMessage = useCallback(
         async (event: MessageEvent) => {
@@ -68,14 +65,14 @@ const Chat = () => {
     }, [ws, handleWebSocketMessage]);
 
     return (
-        <div>
-            <ScrollArea>
-                <div>
-                    Messages
-                </div>
-            </ScrollArea>
-            <ChatInput/>
-        </div>
+        <main className="m-5 flex h-[calc(100vh-2.5rem)] flex-col justify-between border-2 border-border p-5 shadow-xl">
+            <section className="mb-auto">
+                <Messages/>
+            </section>
+            <section className="mt-auto">
+                <ChatInput/>
+            </section>
+        </main>
     );
 };
 
